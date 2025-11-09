@@ -1,1 +1,1 @@
-# Created cybersecurity repository for learning resources
+# Created cybersecurity repository resources for learning purposes

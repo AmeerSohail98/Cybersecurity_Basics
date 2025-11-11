@@ -1,0 +1,36 @@
+1. OWASP Juice Shop (Recommended for Beginners)
+
+URL: https://owasp-juice.shop
+Description: A modern, intentionally vulnerable e-commerce app with hidden admin panels, API endpoints, and directories to enumerate. Great for practicing Gobuster on real-world-like structures (e.g., find /ftp, /rest paths).
+Gobuster Example: gobuster dir -u https://owasp-juice.shop -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x js,html,php
+Access: Public, no signup needed. Challenges guide you through enumeration.
+
+2. HackThisSite
+
+URL: https://www.hackthissite.org
+Description: A classic platform with basic and realistic web hacking missions, including sites with hidden directories and files for brute-forcing (e.g., in "Basic" or "Realistic" challenges).
+Gobuster Example: Target a specific mission site (e.g., after signup, scan http://www.hackthissite.org/missions/basic/1/ for hidden paths like /admin or backups).
+Access: Free signup required for full missions; public challenges available.
+
+3. FFUF.me (Tool-Specific Target)
+
+URL: http://ffuf.me
+Description: A simple PHP-based app built explicitly for fuzzing/brute-forcing tools like Gobuster or FFUF. It has discoverable directories and files to test your scans.
+Gobuster Example: gobuster dir -u http://ffuf.me -w /usr/share/wordlists/dirb/common.txt -t 50 (adjust threads to be gentle).
+Access: Fully public, no setup.
+
+4. Pentest-Ground
+
+URL: https://pentest-ground.com
+Description: A suite of vulnerable Docker-based web apps for pentesting, including ones with exposed directories for enumeration practice.
+Gobuster Example: Scan a target like https://pentest-ground.com/vulnerable-app (explore sub-apps for hidden /uploads or config files).
+Access: Public, with various labs.
+
+5. TryHackMe - Offensive Security Intro Room
+
+URL: https://tryhackme.com/room/offensivesecurityintro (requires free account)
+Description: Guided lab using Gobuster to enumerate a fake bank's website (e.g., discover hidden directories like /admin or /backup).
+Gobuster Example: In the room, deploy the machine and run gobuster dir -u http://MACHINE_IP -w common.txt.
+Access: Free tier available; browser-based or VPN-connected.
+
+For more options, check the full OWASP Vulnerable Web Applications Directory. Start locally if possible (e.g., install DVWA via Docker: docker run --rm -it -p 80:80 vulnerables/web-dvwa), but these online ones are ready-to-scan. Remember: Practice ethically—review each site's rules, and never scan production sites without permission! If you need wordlist tips or command tweaks, let me know.
